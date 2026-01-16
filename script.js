@@ -76,8 +76,9 @@ function loadScreen(image, heading, text) {
 
 function activateNoEscape() {
     noBtn.addEventListener("mouseenter", () => {
-        const box = document.querySelector(".buttons");
+        noBtn.classList.add("jump");
 
+        const box = document.querySelector(".buttons");
         const maxX = box.clientWidth - noBtn.offsetWidth;
         const maxY = box.clientHeight - noBtn.offsetHeight;
 
@@ -86,8 +87,13 @@ function activateNoEscape() {
 
         noBtn.style.left = x + "px";
         noBtn.style.top = y + "px";
+
+        setTimeout(() => {
+            noBtn.classList.remove("jump");
+        }, 300);
     });
 }
+
 
 function showFinal() {
     loadScreen(
@@ -97,3 +103,21 @@ function showFinal() {
     );
     noBtn.style.display = "none";
 }
+
+// Floating hearts animation
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}, 800);
+
+
