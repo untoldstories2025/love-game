@@ -11,15 +11,16 @@ const noBtn = document.getElementById("noBtn");
 
 // Cute GIFs
 const teddyGifs = [
-    "https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif",
-    "https://media.giphy.com/media/l4FGpP4lxGGgK5CBW/giphy.gif",
-    "https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif",
-    "https://media.giphy.com/media/1BcfiGuO4N9Yg/giphy.gif",
-    "https://media.giphy.com/media/3o6ZsXG8G0x5xE5GdO/giphy.gif",
-    "https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif",
+    "https://media.giphy.com/media/RhhV1f4gE2BYA/giphy.gif",
+    "https://media.giphy.com/media/l4pTdcif9rriwCScI/giphy.gif",
+    "https://media.giphy.com/media/3oEduSbSGpGaRX2Vri/giphy.gif",
     "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif",
-    "https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif"
+    "https://media.giphy.com/media/8fen5OcbLmTcE/giphy.gif",
+    "https://media.giphy.com/media/f9kT1bOeGdvEw/giphy.gif",
+    "https://media.giphy.com/media/26u4cqiYI30juCOGY/giphy.gif",
+    "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif"
 ];
+
 
 // Initial Screen
 loadScreen(
@@ -125,6 +126,7 @@ setInterval(() => {
         heart.remove();
     }, 6000);
 }, 800);
+
 
 
 
