@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>POV: She can't say no 😄</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <img id="img" src="https://i.imgur.com/8Km9tLL.png">
+    <h2 id="title">Do you love me? 🥰</h2>
+    <p id="subtitle">hon ni na yaar</p>
+
+    <div class="buttons">
+        <button id="yesBtn">Yes</button>
+        <button id="noBtn">No</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

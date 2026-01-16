@@ -1,0 +1,52 @@
+* {
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #e8b1b1;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: transparent;
+    text-align: center;
+}
+
+img {
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    margin: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+.buttons {
+    position: relative;
+    height: 80px;
+}
+
+button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#yesBtn {
+    background-color: #ffffff;
+}
+
+#noBtn {
+    background-color: #ffffff;
+    position: absolute;
+    left: 120px;
+}
