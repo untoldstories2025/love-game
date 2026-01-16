@@ -10,16 +10,33 @@ const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 
 // Cute GIFs
-const teddyGifs = [
-    "https://media.giphy.com/media/RhhV1f4gE2BYA/giphy.gif",
-    "https://media.giphy.com/media/l4pTdcif9rriwCScI/giphy.gif",
-    "https://media.giphy.com/media/3oEduSbSGpGaRX2Vri/giphy.gif",
-    "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif",
-    "https://media.giphy.com/media/8fen5OcbLmTcE/giphy.gif",
-    "https://media.giphy.com/media/f9kT1bOeGdvEw/giphy.gif",
-    "https://media.giphy.com/media/26u4cqiYI30juCOGY/giphy.gif",
-    "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif"
-];
+const teddyPack = {
+    start: {
+        name: "Love Teddy 🧸",
+        gif: "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif"
+    },
+    think: {
+        name: "Thinking Teddy 🤔",
+        gif: "https://media.giphy.com/media/l0MYC0LajbaPoEADu/giphy.gif"
+    },
+    sad: {
+        name: "Sad Teddy 🥺",
+        gif: "https://media.giphy.com/media/ROF8OQvDmxytW/giphy.gif"
+    },
+    cry: {
+        name: "Crying Teddy 😭",
+        gif: "https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif"
+    },
+    tease: {
+        name: "Naughty Teddy 😜",
+        gif: "https://media.giphy.com/media/5GoVLqeAOo6PK/giphy.gif"
+    },
+    love: {
+        name: "Happy Teddy ❤️",
+        gif: "https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif"
+    }
+};
+
 
 
 // Initial Screen
@@ -126,6 +143,7 @@ setInterval(() => {
         heart.remove();
     }, 6000);
 }, 800);
+
 
 
 
