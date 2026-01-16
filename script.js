@@ -1,21 +1,25 @@
 let step = 1;
 
 const gif = document.getElementById("gif");
+function getRandomTeddy() {
+    return teddyGifs[Math.floor(Math.random() * teddyGifs.length)];
+}
 const title = document.getElementById("title");
 const subtitle = document.getElementById("subtitle");
 const yesBtn = document.getElementById("yesBtn");
-
 const noBtn = document.getElementById("noBtn");
 
 // Cute GIFs
-const gifs = {
-    start: "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif",
-    think: "https://media.giphy.com/media/l0MYC0LajbaPoEADu/giphy.gif",
-    sad: "https://media.giphy.com/media/ROF8OQvDmxytW/giphy.gif",
-    cry: "https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif",
-    tease: "https://media.giphy.com/media/5GoVLqeAOo6PK/giphy.gif",
-    love: "https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif"
-};
+const teddyGifs = [
+    "https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif",
+    "https://media.giphy.com/media/l4FGpP4lxGGgK5CBW/giphy.gif",
+    "https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif",
+    "https://media.giphy.com/media/1BcfiGuO4N9Yg/giphy.gif",
+    "https://media.giphy.com/media/3o6ZsXG8G0x5xE5GdO/giphy.gif",
+    "https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif",
+    "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif",
+    "https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif"
+];
 
 // Initial Screen
 loadScreen(
@@ -33,7 +37,7 @@ noBtn.addEventListener("click", () => {
 
     if (step === 2) {
         loadScreen(
-            gifs.think,
+            getRandomTeddy(),
             "Please think again! 😏",
             "I know you love me a little bit 😉"
         );
@@ -121,5 +125,6 @@ setInterval(() => {
         heart.remove();
     }, 6000);
 }, 800);
+
 
 
