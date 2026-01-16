@@ -70,3 +70,41 @@ button {
     left: 180px;
     top: 0;
 }
+
+/* ❤️ Floating Hearts */
+.heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-120vh) scale(1.8);
+        opacity: 0;
+    }
+}
+
+/* 🎯 Button Hover Bounce */
+button:hover {
+    transform: scale(1.1);
+    transition: 0.2s ease;
+}
+
+/* 🏃 NO Button Jump */
+.jump {
+    animation: jump 0.3s ease;
+}
+
+@keyframes jump {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
+
