@@ -41,7 +41,7 @@ const teddyPack = {
 
 // Initial Screen
 loadScreen(
-    getRandomTeddy(),
+    teddyPack.start,
     "Do you love me? 🥰",
     "Your guggu made this page specially for you bubbu 💖"
 );
@@ -54,41 +54,47 @@ noBtn.addEventListener("click", () => {
     step++;
 
     if (step === 2) {
-        loadScreen(
-            getRandomTeddy(),
-            "Please think again! 😏",
-            "I know you love me a little bit 😉"
+       loadScreen(
+    teddyPack.think,
+    "Do you love me? 🥰",
+    "Your guggu made this page specially for you bubbu 💖"
         );
+
     }
 
     else if (step === 3) {
-        loadScreen(
-            getRandomTeddy(),
-            "Ek aur baar soch lo! 🥹",
-            "Itna jaldi mana mat karo please ❤️"
+       loadScreen(
+    teddyPack.sad,
+    "Do you love me? 🥰",
+    "Your guggu made this page specially for you bubbu 💖"
         );
+
     }
 
     else if (step === 4) {
-        loadScreen(
-            getRandomTeddy(),
-            "Hottiee... maan jao na! 😭",
-            "Kitna code likhwane ka iraada hai kya? 💻😂"
+       loadScreen(
+    teddyPack.cry,
+    "Do you love me? 🥰",
+    "Your guggu made this page specially for you bubbu 💖"
         );
     }
 
     else if (step >= 5) {
         loadScreen(
-            getRandomTeddy(),
-            "Try clicking NO 😜",
-            "But I won’t let you say no 😈"
+    teddyPack.tease,
+    "Do you love me? 🥰",
+    "Your guggu made this page specially for you bubbu 💖"
         );
+
         activateNoEscape();
     }
 });
 
-function loadScreen(image, heading, text) {
-    gif.src = image;
+const teddyName = document.getElementById("teddyName");
+
+function loadScreen(teddy, heading, text) {
+    gif.src = teddy.gif;
+    teddyName.innerText = teddy.name;
     title.innerText = heading;
     subtitle.innerText = text;
 
@@ -119,11 +125,13 @@ function activateNoEscape() {
 
 
 function showFinal() {
-    loadScreen(
-        getRandomTeddy(),
-        "I knew it! You love me a lot 😘",
-        "I won again ❤️"
-    );
+    
+loadScreen(
+    teddyPack.love,
+    "Do you love me? 🥰",
+    "Your guggu made this page specially for you bubbu 💖"
+        );
+
     noBtn.style.display = "none";
 }
 
@@ -143,6 +151,7 @@ setInterval(() => {
         heart.remove();
     }, 6000);
 }, 800);
+
 
 
 
