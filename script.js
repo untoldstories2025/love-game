@@ -4,6 +4,7 @@ const gif = document.getElementById("gif");
 const title = document.getElementById("title");
 const subtitle = document.getElementById("subtitle");
 const yesBtn = document.getElementById("yesBtn");
+
 const noBtn = document.getElementById("noBtn");
 
 // Cute GIFs
@@ -97,3 +98,4 @@ function showFinal() {
     );
     noBtn.style.display = "none";
 }
+
