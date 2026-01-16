@@ -47,12 +47,15 @@ p {
 
 .buttons {
     position: relative;
-    height: 90px;
-    margin-top: 10px;
+    height: 120px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
 }
 
 button {
-    padding: 10px 20px;
+    padding: 10px 20px 30px;
     border-radius: 10px;
     border: none;
     cursor: pointer;
@@ -67,11 +70,10 @@ button {
 #noBtn {
     background: #dddddd;
     position: absolute;
-    left: 180px;
-    top: 0;
+    left: 50%;
+    transform: translateX(60px);
 }
 
-/* ❤️ Floating Hearts */
 .heart {
     position: fixed;
     bottom: -20px;
@@ -91,13 +93,11 @@ button {
     }
 }
 
-/* 🎯 Button Hover Bounce */
 button:hover {
     transform: scale(1.1);
     transition: 0.2s ease;
 }
 
-/* 🏃 NO Button Jump */
 .jump {
     animation: jump 0.3s ease;
 }
@@ -107,4 +107,5 @@ button:hover {
     50% { transform: translateY(-12px); }
     100% { transform: translateY(0); }
 }
+
 
