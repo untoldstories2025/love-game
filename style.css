@@ -14,7 +14,7 @@ body {
 
 .card {
     background: #fff5f7;
-    width: 360px;
+    width: 350px;
     padding: 25px;
     border-radius: 18px;
     text-align: center;
@@ -30,13 +30,7 @@ body {
 img {
     width: 180px;
     height: auto;
-    margin-bottom: 10px;
-}
-
-h3 {
-    margin: 5px 0;
-    color: #ff5f8a;
-    font-weight: 600;
+    margin-bottom: 15px;
 }
 
 h1 {
@@ -53,34 +47,24 @@ p {
 
 .buttons {
     position: relative;
-    height: 120px;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
+    height: 60px;
 }
 
 button {
-    padding: 10px 22px;
+    padding: 10px 20px;
     border-radius: 10px;
     border: none;
     cursor: pointer;
     font-size: 15px;
-    transition: 0.2s ease;
-}
-
-button:hover {
-    transform: scale(1.1);
 }
 
 #yesBtn {
     background: #ff7aa2;
     color: white;
-    z-index: 2;
 }
 
 #noBtn {
     background: #dddddd;
     position: absolute;
-    left: 55%;
+    left: 120px;
 }
