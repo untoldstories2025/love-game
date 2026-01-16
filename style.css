@@ -47,7 +47,8 @@ p {
 
 .buttons {
     position: relative;
-    height: 60px;
+    height: 90px;
+    margin-top: 10px;
 }
 
 button {
@@ -59,12 +60,13 @@ button {
 }
 
 #yesBtn {
-    background: #ff7aa2;
-    color: white;
+    position: relative;
+    margin-right: 20px;
 }
 
 #noBtn {
     background: #dddddd;
     position: absolute;
-    left: 120px;
+    left: 180px;
+    top: 0;
 }
