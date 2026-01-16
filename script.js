@@ -36,8 +36,11 @@ const teddyPack = {
         gif: "https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif"
     }
 };
-
-
+// 🚀 Preload all teddy GIFs so they load instantly
+Object.values(teddyPack).forEach(teddy => {
+    const img = new Image();
+    img.src = teddy.gif;
+});
 
 // Initial Screen
 loadScreen(
@@ -151,6 +154,7 @@ setInterval(() => {
         heart.remove();
     }, 6000);
 }, 800);
+
 
 
 
