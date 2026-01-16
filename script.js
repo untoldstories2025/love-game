@@ -23,7 +23,7 @@ const teddyGifs = [
 
 // Initial Screen
 loadScreen(
-    gifs.start,
+    getRandomTeddy(),
     "Do you love me? 🥰",
     "Your guggu made this page specially for you bubbu 💖"
 );
@@ -45,7 +45,7 @@ noBtn.addEventListener("click", () => {
 
     else if (step === 3) {
         loadScreen(
-            gifs.sad,
+            getRandomTeddy(),
             "Ek aur baar soch lo! 🥹",
             "Itna jaldi mana mat karo please ❤️"
         );
@@ -53,7 +53,7 @@ noBtn.addEventListener("click", () => {
 
     else if (step === 4) {
         loadScreen(
-            gifs.cry,
+            getRandomTeddy(),
             "Hottiee... maan jao na! 😭",
             "Kitna code likhwane ka iraada hai kya? 💻😂"
         );
@@ -61,7 +61,7 @@ noBtn.addEventListener("click", () => {
 
     else if (step >= 5) {
         loadScreen(
-            gifs.tease,
+            getRandomTeddy(),
             "Try clicking NO 😜",
             "But I won’t let you say no 😈"
         );
@@ -102,7 +102,7 @@ function activateNoEscape() {
 
 function showFinal() {
     loadScreen(
-        gifs.love,
+        getRandomTeddy(),
         "I knew it! You love me a lot 😘",
         "I won again ❤️"
     );
@@ -125,6 +125,7 @@ setInterval(() => {
         heart.remove();
     }, 6000);
 }, 800);
+
 
 
 
