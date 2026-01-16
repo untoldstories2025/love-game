@@ -49,7 +49,7 @@ noBtn.addEventListener("click", () => {
     else if (step === 4) {
         loadScreen(
             gifs.cry,
-            "Hottie... maan jao na! 😭",
+            "Hottiee... maan jao na! 😭",
             "Kitna code likhwane ka iraada hai kya? 💻😂"
         );
     }
@@ -93,9 +93,7 @@ function showFinal() {
     loadScreen(
         gifs.love,
         "I knew it! You love me a lot 😘",
-        "I win again ❤️"
+        "I won again ❤️"
     );
     noBtn.style.display = "none";
 }
-
-
