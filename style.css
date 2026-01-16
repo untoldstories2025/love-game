@@ -1,52 +1,71 @@
 * {
-    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-    background-color: #e8b1b1;
+    margin: 0;
+    background: #f2b6c1;
     height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
-.container {
-    background: transparent;
+.card {
+    background: #fff5f7;
+    width: 350px;
+    padding: 25px;
+    border-radius: 18px;
     text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    animation: pop 0.5s ease;
+}
+
+@keyframes pop {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
 
 img {
-    width: 150px;
+    width: 180px;
+    height: auto;
     margin-bottom: 15px;
 }
 
-h2 {
-    margin: 10px;
+h1 {
+    font-size: 22px;
+    margin: 10px 0;
+    line-height: 1.4;
 }
 
 p {
+    font-size: 15px;
     margin-bottom: 20px;
+    color: #444;
 }
 
 .buttons {
     position: relative;
-    height: 80px;
+    height: 60px;
 }
 
 button {
-    padding: 10px 25px;
+    padding: 10px 20px;
+    border-radius: 10px;
     border: none;
-    border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 #yesBtn {
-    background-color: #ffffff;
+    background: #ff7aa2;
+    color: white;
 }
 
 #noBtn {
-    background-color: #ffffff;
+    background: #dddddd;
     position: absolute;
     left: 120px;
 }
+
