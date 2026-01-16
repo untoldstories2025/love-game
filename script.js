@@ -1,15 +1,13 @@
 let step = 1;
 
 const gif = document.getElementById("gif");
-function getRandomTeddy() {
-    return teddyGifs[Math.floor(Math.random() * teddyGifs.length)];
-}
+const teddyName = document.getElementById("teddyName");
 const title = document.getElementById("title");
 const subtitle = document.getElementById("subtitle");
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 
-// Cute GIFs
+/* 🧸 Teddy Pack */
 const teddyPack = {
     start: {
         name: "Love Teddy 🧸",
@@ -36,129 +34,94 @@ const teddyPack = {
         gif: "https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif"
     }
 };
-// 🚀 Preload all teddy GIFs so they load instantly
+
+/* ⚡ Preload GIFs */
 Object.values(teddyPack).forEach(teddy => {
     const img = new Image();
     img.src = teddy.gif;
 });
 
-// Initial Screen
-loadScreen(
-    teddyPack.start,
-    "Do you love me? 🥰",
-    "Your guggu made this page specially for you bubbu 💖"
-);
-
-yesBtn.addEventListener("click", () => {
-    showFinal();
-});
-
-noBtn.addEventListener("click", () => {
-    step++;
-
-    if (step === 2) {
-       loadScreen(
-    teddyPack.think,
-    "Do you love me? 🥰",
-    "Your guggu made this page specially for you bubbu 💖"
-        );
-
-    }
-
-    else if (step === 3) {
-       loadScreen(
-    teddyPack.sad,
-    "Do you love me? 🥰",
-    "Your guggu made this page specially for you bubbu 💖"
-        );
-
-    }
-
-    else if (step === 4) {
-       loadScreen(
-    teddyPack.cry,
-    "Do you love me? 🥰",
-    "Your guggu made this page specially for you bubbu 💖"
-        );
-    }
-
-    else if (step >= 5) {
-        loadScreen(
-    teddyPack.tease,
-    "Do you love me? 🥰",
-    "Your guggu made this page specially for you bubbu 💖"
-        );
-
-        activateNoEscape();
-    }
-});
-
-const teddyName = document.getElementById("teddyName");
-
+/* 🎬 Load Screen */
 function loadScreen(teddy, heading, text) {
     gif.src = teddy.gif;
     teddyName.innerText = teddy.name;
     title.innerText = heading;
     subtitle.innerText = text;
 
-    document.querySelector(".card").style.animation = "none";
-    void document.querySelector(".card").offsetWidth;
-    document.querySelector(".card").style.animation = "pop 0.5s ease";
+    const card = document.querySelector(".card");
+    card.style.animation = "none";
+    void card.offsetWidth;
+    card.style.animation = "pop 0.5s ease";
 }
 
+/* 🏃 NO Button Escape */
 function activateNoEscape() {
-    noBtn.addEventListener("mouseenter", () => {
-        noBtn.classList.add("jump");
-
+    noBtn.onmouseenter = () => {
         const box = document.querySelector(".card");
-        const maxX = box.clientWidth - noBtn.offsetWidth;
-        const maxY = box.clientHeight - noBtn.offsetHeight;
+        const maxX = box.clientWidth - noBtn.offsetWidth - 20;
+        const maxY = box.clientHeight - noBtn.offsetHeight - 20;
 
         const x = Math.random() * maxX;
         const y = Math.random() * maxY;
 
         noBtn.style.left = x + "px";
         noBtn.style.top = y + "px";
-
-        setTimeout(() => {
-            noBtn.classList.remove("jump");
-        }, 300);
-    });
+    };
 }
 
-
+/* ❤️ Final Screen */
 function showFinal() {
-    
-loadScreen(
-    teddyPack.love,
-    "Do you love me? 🥰",
-    "Your guggu made this page specially for you bubbu 💖"
-        );
-
+    loadScreen(
+        teddyPack.love,
+        "I knew it! You love me a lot 😘",
+        "I won again ❤️"
+    );
     noBtn.style.display = "none";
 }
 
+/* 👉 Button Events */
+yesBtn.onclick = () => showFinal();
 
-// Floating hearts animation
-setInterval(() => {
-    const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerHTML = "❤️";
+noBtn.onclick = () => {
+    step++;
 
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+    if (step === 2) {
+        loadScreen(
+            teddyPack.think,
+            "Please think again! 😏",
+            "I know you love me a little bit 😉"
+        );
+    }
 
-    document.body.appendChild(heart);
+    else if (step === 3) {
+        loadScreen(
+            teddyPack.sad,
+            "Ek aur baar soch lo! 🥹",
+            "Itna jaldi mana mat karo please ❤️"
+        );
+    }
 
-    setTimeout(() => {
-        heart.remove();
-    }, 6000);
-}, 800);
+    else if (step === 4) {
+        loadScreen(
+            teddyPack.cry,
+            "Hottiee... maan jao na! 😭",
+            "Kitna code likhwane ka iraada hai kya? 💻😂"
+        );
+    }
 
+    else if (step >= 5) {
+        loadScreen(
+            teddyPack.tease,
+            "Try clicking NO 😜",
+            "But I won’t let you say no 😈"
+        );
+        activateNoEscape();
+    }
+};
 
-
-
-
-
-
-
+/* 🚀 Initial Screen */
+loadScreen(
+    teddyPack.start,
+    "Do you love me? 🥰",
+    "Your guggu made this page specially for you bubbu 💖"
+);
