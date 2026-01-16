@@ -1,10 +1,27 @@
 let step = 1;
 
+const gif = document.getElementById("gif");
 const title = document.getElementById("title");
 const subtitle = document.getElementById("subtitle");
-const img = document.getElementById("img");
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
+
+// Cute GIFs
+const gifs = {
+    start: "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif",
+    think: "https://media.giphy.com/media/l0MYC0LajbaPoEADu/giphy.gif",
+    sad: "https://media.giphy.com/media/ROF8OQvDmxytW/giphy.gif",
+    cry: "https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif",
+    tease: "https://media.giphy.com/media/5GoVLqeAOo6PK/giphy.gif",
+    love: "https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif"
+};
+
+// Initial Screen
+loadScreen(
+    gifs.start,
+    "Do you love me? 🥰",
+    "She made this page specially for him 💖"
+);
 
 yesBtn.addEventListener("click", () => {
     showFinal();
@@ -14,43 +31,70 @@ noBtn.addEventListener("click", () => {
     step++;
 
     if (step === 2) {
-        title.innerText = "Please think again! 😒";
-        subtitle.innerText = "itni jaldi na matt bolo 🥺";
+        loadScreen(
+            gifs.think,
+            "Please think again! 😏",
+            "She knows you love her a little bit 😉"
+        );
     }
+
     else if (step === 3) {
-        title.innerText = "Ek aur baar soch lo! 🥹";
-        subtitle.innerText = "kyu aisa kar rahi ho pls maan jao ❤️";
+        loadScreen(
+            gifs.sad,
+            "Ek aur baar soch lo! 🥹",
+            "Itna jaldi mana mat karo please ❤️"
+        );
     }
+
     else if (step === 4) {
-        title.innerText = "beautiful pls maan jao na! 😭";
-        subtitle.innerText = "itna code likh waogi kya 💻";
+        loadScreen(
+            gifs.cry,
+            "Beautiful... maan jao na! 😭",
+            "Itna code likhwane ka iraada hai kya? 💻😂"
+        );
     }
+
     else if (step >= 5) {
-        title.innerText = "Try clicking NO 😏";
-        subtitle.innerText = "but you can't 😜";
-        enableMovingNo();
+        loadScreen(
+            gifs.tease,
+            "Try clicking NO 😜",
+            "But she won’t let you say no 😈"
+        );
+        activateNoEscape();
     }
 });
 
-function enableMovingNo() {
-    noBtn.addEventListener("mouseenter", moveNoButton);
+function loadScreen(image, heading, text) {
+    gif.src = image;
+    title.innerText = heading;
+    subtitle.innerText = text;
+
+    document.querySelector(".card").style.animation = "none";
+    void document.querySelector(".card").offsetWidth;
+    document.querySelector(".card").style.animation = "pop 0.5s ease";
 }
 
-function moveNoButton() {
-    const container = document.querySelector(".buttons");
+function activateNoEscape() {
+    noBtn.addEventListener("mouseenter", () => {
+        const box = document.querySelector(".buttons");
 
-    const maxX = container.clientWidth - noBtn.offsetWidth;
-    const maxY = container.clientHeight - noBtn.offsetHeight;
+        const maxX = box.clientWidth - noBtn.offsetWidth;
+        const maxY = box.clientHeight - noBtn.offsetHeight;
 
-    const randX = Math.random() * maxX;
-    const randY = Math.random() * maxY;
+        const x = Math.random() * maxX;
+        const y = Math.random() * maxY;
 
-    noBtn.style.left = randX + "px";
-    noBtn.style.top = randY + "px";
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+    });
 }
 
 function showFinal() {
-    title.innerText = "I knew it! You love me a lot 🥰";
-    subtitle.innerText = "Mission Successful ❤️";
+    loadScreen(
+        gifs.love,
+        "I knew it! You love me a lot 😘",
+        "She wins again ❤️"
+    );
     noBtn.style.display = "none";
 }
+
