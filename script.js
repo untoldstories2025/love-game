@@ -20,7 +20,7 @@ const gifs = {
 loadScreen(
     gifs.start,
     "Do you love me? 🥰",
-    "She made this page specially for him 💖"
+    "Your guggu made this page specially for you bubbu 💖"
 );
 
 yesBtn.addEventListener("click", () => {
@@ -34,7 +34,7 @@ noBtn.addEventListener("click", () => {
         loadScreen(
             gifs.think,
             "Please think again! 😏",
-            "She knows you love her a little bit 😉"
+            "I know you love me a little bit 😉"
         );
     }
 
@@ -49,8 +49,8 @@ noBtn.addEventListener("click", () => {
     else if (step === 4) {
         loadScreen(
             gifs.cry,
-            "Beautiful... maan jao na! 😭",
-            "Itna code likhwane ka iraada hai kya? 💻😂"
+            "Hottie... maan jao na! 😭",
+            "Kitna code likhwane ka iraada hai kya? 💻😂"
         );
     }
 
@@ -58,7 +58,7 @@ noBtn.addEventListener("click", () => {
         loadScreen(
             gifs.tease,
             "Try clicking NO 😜",
-            "But she won’t let you say no 😈"
+            "But I won’t let you say no 😈"
         );
         activateNoEscape();
     }
@@ -93,8 +93,9 @@ function showFinal() {
     loadScreen(
         gifs.love,
         "I knew it! You love me a lot 😘",
-        "She wins again ❤️"
+        "I win again ❤️"
     );
     noBtn.style.display = "none";
 }
+
 
