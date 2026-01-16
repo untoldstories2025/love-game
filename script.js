@@ -79,7 +79,7 @@ function activateNoEscape() {
     noBtn.addEventListener("mouseenter", () => {
         noBtn.classList.add("jump");
 
-        const box = document.querySelector(".buttons");
+        const box = document.querySelector(".card");
         const maxX = box.clientWidth - noBtn.offsetWidth;
         const maxY = box.clientHeight - noBtn.offsetHeight;
 
@@ -121,4 +121,5 @@ setInterval(() => {
         heart.remove();
     }, 6000);
 }, 800);
+
 
